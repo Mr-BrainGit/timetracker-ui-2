@@ -37,97 +37,34 @@ export default function Login() {
         } = props;
 
             return (
-                <div className="bg min-h-full flex items-center justify-center py-10 px-4 sm:px-4 lg:px-6">
-                    <div className="max-w-sm w-full space-y-8">
-                    <div>
-                        <img
-                        className="mx-auto h-12 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                        alt="Workflow"
-                        />
-                        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Connectez-vous</h2>
-                        <p className="mt-2 text-center text-sm text-gray-600">
-                        Or{' '}
-                        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                            start your 14-day free trial
-                        </a>
-                        </p>
-                    </div>
-                    <form className="mt-8 space-y-8" onSubmit={handleSubmit}>
-                        <input type="hidden" name="remember" defaultValue="true" />
-                        <div className="rounded-md shadow-sm space-y-1">
-                        <div>
-                            <label htmlFor="email-address" className='text-gray-500 text-sm'>
-                            Adresse email
-                            </label>
-                            <input
-                            id="email-address"
-                            name="email"
-                            type="email"
-                            autoComplete="email"
-                            value={values.email}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            className="border-red-500 appearance-none rounded-none relative block w-full rounded-b-md px-3 py-2 border border-gray-300 text-gray-900 rounded-t-md focus:outline-none  focus:z-10 md:text-md"
-                            />
-                            {errors.email && touched.email && (
-                                <div className="text-red-500 text-sm">{errors.email}</div>
-                                )}
-                        </div>
-                        <div>
-                            <label htmlFor="password" className='text-gray-500 text-sm'>
-                            Mot de passe
-                            </label>
-                            <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            value={values.password}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 md:text-md"
-                            />
-                            {errors.password && touched.password && (
-                                <div className="text-red-500 text-sm">{errors.password}</div>
-                                )}
-                        </div>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                            <input
-                            id="remember-me"
-                            name="remember-me"
-                            type="checkbox"
-                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                            />
-                            <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                            Remember me
-                            </label>
-                        </div>
-
-                        <div className="text-sm">
-                            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                            Forgot your password?
-                            </a>
-                        </div>
-                        </div>
-
-                        <div>
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                            <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
-                            </span>
-                            Sign in
-                        </button>
-                        </div>
-                    </form>
+                <div className='grid h-screen place-items-center '>
+                     <div class=" login bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 ">
+                        <form class="space-y-6" action="#">
+                            <h5 class="text-xl font-medium text-gray-900 dark:text-white">Connectez-vous</h5>
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required=""/>
+                            </div>
+                            <div>
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mot de passe</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required=""/>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="remember" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required=""/>
+                                    </div>
+                                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                                </div>
+                                <a href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                            </div>
+                            <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                            
+                        </form>
                     </div>
                 </div>
+               
+
             );
         }}
     </Formik>

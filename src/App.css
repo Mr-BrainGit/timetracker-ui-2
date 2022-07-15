@@ -1,17 +1,75 @@
 .bg-dark-purple{
-  background-color: #2b2591;
+  background-color: #fafafa;
+  border-right: 3px solid #ececec;
 }
 
 .sideIcon{
-  width: 25px;
+  width: 27px;
 }
 
 .header{
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
 }
 
 .icons{
   width: 45px;
   
+}
+
+.hr{
+  height: 2px;
+}
+
+.teste{
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-flex{
+  display: flex;
+}
+
+
+.logo-title{
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+
+.sidebar-menu{
+  margin-top: 50px;
+}
+
+.active{
+  background-color: #d6e4f8;
+  font-weight: bold;
+  border-left: 3px solid #c4d5ee;
+}
+
+.item-name{
+  color: #455570;
+}
+
+li:hover{
+  background-color: #d6e4f8;
+  font-weight: bold;
+  border-left: 3px solid #c4d5ee;
+}
+
+.search-section{
+  width: 500px;
+}
+
+.profil-item{
+  margin-left: 8px;
+  margin-top: -4px;
+}
+
+.profil{
+  margin: -21px;
+  background-color: #ececec;
+  padding: 20px;
 }
